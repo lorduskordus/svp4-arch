@@ -28,7 +28,7 @@ RUN git clone https://aur.archlinux.org/paru-bin.git --single-branch && \
 # Install plex-desktop, switch to mpv with vapoursynth, install SVP4.
 RUN paru -S aur/plex-desktop --noconfirm && \
     sudo pacman -Rdd mpv --noconfirm && \
-    paru -S aur/mpv-vapoursynth --noconfirm \
+    paru -S aur/mpv-vapoursynth --noconfirm && \
     paru -S aur/svp --noconfirm
 
 # Cleanup.
