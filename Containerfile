@@ -1,13 +1,10 @@
-FROM quay.io/toolbx-images/archlinux-toolbox:latest AS svp4-arch
+FROM ghcr.io/ublue-os/arch-distrobox:latest AS svp4-arch
 
+# Copy mpv config.
 COPY files /
 
-# Update the system.
-RUN pacman -Syu --noconfirm
-
-# Install needed packages.
+# Install drivers (excluding NVIDIA).
 RUN pacman -S \
-        base-devel \
         libva-mesa-driver \
         intel-media-driver \
         --noconfirm
@@ -16,26 +13,19 @@ RUN pacman -S \
 RUN useradd -m --shell=/bin/bash build && usermod -L build && \
     echo "build ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
-# Add paru AUR helper.
+# Install plex-desktop, install SVP4,
+# switch to mpv with vapoursynth.
 USER build
-WORKDIR /home/build
-RUN git clone https://aur.archlinux.org/paru-bin.git --single-branch && \
-    cd paru-bin && \
-    makepkg -si --noconfirm && \
-    cd .. && \
-    rm -drf paru-bin
-
-# Install plex-desktop, switch to mpv with vapoursynth, install SVP4.
-RUN paru -S aur/plex-desktop --noconfirm && \
+RUN paru -S \
+        aur/plex-desktop \
+        aur/svp \
+        --noconfirm && \
     sudo pacman -Rdd mpv --noconfirm && \
-    paru -S aur/mpv-vapoursynth --noconfirm && \
-    paru -S aur/svp --noconfirm
+    paru -S aur/mpv-vapoursynth --noconfirm
 
 # Cleanup.
 USER root
-WORKDIR /
 RUN userdel -r build && \
-    rm -drf /home/build && \
     sed -i '/build ALL=(ALL) NOPASSWD: ALL/d' /etc/sudoers && \
     rm -rf \
         /tmp/* \
@@ -43,7 +33,7 @@ RUN userdel -r build && \
 
 FROM svp4-arch AS svp4-arch-nvidia
 
-# Install packages for NVIDIA.
+# Install NVIDIA drivers.
 RUN pacman -S \
         nvidia-utils \
         opencl-nvidia \
