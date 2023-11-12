@@ -1,7 +1,7 @@
 name: Build SVP4-Arch
 on:
   schedule:
-    - cron: '20 18 * * *'  # 8:20pm everyday
+    - cron: '20 19 * * *'  # 19:20 UTC everyday
   pull_request:
     branches:
       - main
