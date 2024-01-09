@@ -13,15 +13,12 @@ RUN pacman -S \
 RUN useradd -m --shell=/bin/bash build && usermod -L build && \
     echo "build ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
-# Install plex-desktop, install SVP4,
-# switch to mpv with vapoursynth.
+# Install plex-desktop and SVP4.
 USER build
 RUN paru -S \
         aur/plex-desktop \
         aur/svp \
-        --noconfirm && \
-    sudo pacman -Rdd mpv --noconfirm && \
-    paru -S aur/mpv-vapoursynth --noconfirm
+        --noconfirm
 
 # Cleanup.
 USER root

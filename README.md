@@ -4,10 +4,10 @@
 
 An Arch container that's ready for **Smooth Video Project** usage.
 
-Preinstalled (using AUR helper paru):
+Preinstalled:
 
 * SVP4
-* MPV with vapoursynth + configured to work with SVP and HW decoding
+* MPV (preconfigured to work with SVP and HW decoding)
 * Plex Desktop
 
 ## Images
@@ -23,18 +23,22 @@ ghcr.io/lorduskordus/svp4-arch-nvidia:latest
 
 ## Installation (distrobox)
 
-For the most painless way, just use the `install.sh` script. All it really does is choose the right image and automatically exports plex-desktop and SVPManager.
+For the most painless way, just use the [install.sh](https://github.com/lorduskordus/svp4-arch/blob/main/install.sh) script. All it really does is choose the right image and automatically exports plex-desktop and SVPManager.
 
 Alternatively:
 
 #### Intel / AMD
 ```
-distrobox create -n svp4-arch -i ghcr.io/lorduskordus/svp4-arch:latest
+distrobox-create --name svp4-arch --image ghcr.io/lorduskordus/svp4-arch:latest --no-entry
 ```
 
 #### NVIDIA
 ```
-distrobox create -n svp4-arch -i ghcr.io/lorduskordus/svp4-arch-nvidia:latest
+distrobox-create --name svp4-arch --image ghcr.io/lorduskordus/svp4-arch-nvidia:latest --no-entry
 ```
 
-This will set you up with everything except you'll have to manually export the apps.
+#### Export the apps to host
+```
+distrobox-enter --name svp4-arch -- distrobox-export --app plex-desktop
+distrobox-enter --name svp4-arch -- distrobox-export --app SVPManager
+```
