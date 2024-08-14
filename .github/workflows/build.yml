@@ -95,7 +95,7 @@ jobs:
           labels: |
             org.opencontainers.image.title=${{ env.IMAGE_NAME }}
             org.opencontainers.image.version=${{ steps.labels.outputs.VERSION }}
-            org.opencontainers.image.description=Arch container with plex-desktop and mpv-vapoursynth, ready for SVP4, drivers preinstalled.
+            org.opencontainers.image.description=An Arch container with SVP4, MPV and Plex Desktop preinstalled & preconfigured.
 
       # Build image using Buildah action
       - name: Build Image
@@ -110,7 +110,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           oci: false
           extra-args: |
-            --target=${{ matrix.base_name }}
+            --target=${{ matrix.base_name }} --security-opt=seccomp=unconfined
 
       # Workaround bug where capital letters in your GitHub username make it impossible to push to GHCR.
       # https://github.com/macbre/push-to-ghcr/issues/12
