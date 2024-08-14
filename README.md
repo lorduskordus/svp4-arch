@@ -23,7 +23,7 @@ ghcr.io/lorduskordus/svp4-arch-nvidia:latest
 
 ## Installation (distrobox)
 
-For the most painless way, just use the [install.sh](https://github.com/lorduskordus/svp4-arch/blob/main/install.sh) script. All it really does is choose the right image and automatically exports plex-desktop and SVPManager.
+For the most painless way, just use the [install.sh](https://github.com/lorduskordus/svp4-arch/blob/main/install.sh) script. All it really does is choose the right image and automatically exports Plex and SVPManager.
 
 Alternatively:
 
@@ -39,6 +39,6 @@ distrobox-create --name svp4-arch --image ghcr.io/lorduskordus/svp4-arch-nvidia:
 
 #### Export the apps to host
 ```
-distrobox-enter --name svp4-arch -- distrobox-export --app plex-desktop
+distrobox-enter --name svp4-arch -- distrobox-export --app Plex
 distrobox-enter --name svp4-arch -- distrobox-export --app SVPManager
 ```
