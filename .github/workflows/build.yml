@@ -8,6 +8,7 @@ on:
     paths-ignore:
       - '**.md'
       - '**.txt'
+      - 'install.sh'
   pull_request_review:
     type: [submitted]
   push:
@@ -16,6 +17,7 @@ on:
     paths-ignore:
       - '**.md'
       - '**.txt'
+      - 'install.sh'
   merge_group:
   workflow_dispatch:
 env:
