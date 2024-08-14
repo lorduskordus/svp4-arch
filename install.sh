@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Pulls the image, creates a distrobox container and
-# exports Plex, SVPManager.
+# Pulls the image, creates a distrobox container
+# and exports Plex, SVPManager.
 
 # Setup variables
 CONTAINER_NAME="svp4-arch"
