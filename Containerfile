@@ -17,7 +17,7 @@ RUN useradd -m --shell=/bin/bash build && usermod -L build && \
 USER build
 RUN paru -S \
         aur/plex-desktop \
-        aur/svp \
+        aur/svp-bin \
         --noconfirm
 
 # Cleanup.
