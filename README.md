@@ -1,6 +1,4 @@
-# SVP4-Arch
-
-[![build-svp4-arch](https://github.com/lorduskordus/svp4-arch/actions/workflows/build.yml/badge.svg)](https://github.com/lorduskordus/svp4-arch/actions/workflows/build.yml)
+# SVP4-Arch &nbsp; [![build-svp4-arch](https://github.com/lorduskordus/svp4-arch/actions/workflows/build.yml/badge.svg)](https://github.com/lorduskordus/svp4-arch/actions/workflows/build.yml)
 
 An Arch container that's ready for **Smooth Video Project** usage.
 
@@ -18,21 +16,26 @@ ghcr.io/lorduskordus/svp4-arch:latest
 
 ## Installation (distrobox)
 
-For the most painless way, just use the [install.sh](https://github.com/lorduskordus/svp4-arch/blob/main/install.sh) script.
+#### For the most painless way, just use the [install.sh](https://github.com/lorduskordus/svp4-arch/blob/main/install.sh) script:
 
-Alternatively:
 
-#### Intel / AMD
+```
+curl -s https://raw.githubusercontent.com/lorduskordus/svp4-arch/main/install.sh | bash
+```
+
+#### Manual installation:
+
+##### Intel / AMD
 ```
 distrobox-create --name svp4-arch --image ghcr.io/lorduskordus/svp4-arch:latest --no-entry
 ```
 
-#### NVIDIA
+##### NVIDIA
 ```
 distrobox-create --name svp4-arch --image ghcr.io/lorduskordus/svp4-arch-nvidia:latest --nvidia --no-entry
 ```
 
-#### Export the apps to host
+##### Export the apps to host
 ```
 distrobox-enter --name svp4-arch -- distrobox-export --app mpv
 distrobox-enter --name svp4-arch -- distrobox-export --app Plex
