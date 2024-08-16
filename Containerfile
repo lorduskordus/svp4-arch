@@ -1,7 +1,7 @@
 FROM ghcr.io/ublue-os/arch-distrobox:latest AS svp4-arch
 
 # Update the system & add build user
-RUN pacman -Syu --noconfirm \
+RUN pacman -Syu --noconfirm && \
     useradd -m --shell=/bin/bash build && usermod -L build && \
     echo "build ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 

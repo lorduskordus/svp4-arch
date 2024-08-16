@@ -34,7 +34,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        base_name: [svp4-arch, svp4-arch-nvidia]
+        base_name: [svp4-arch]
         include:
           - is_latest_version: true
             is_stable_version: true
