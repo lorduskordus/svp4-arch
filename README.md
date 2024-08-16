@@ -10,20 +10,15 @@ Preinstalled:
 * MPV (preconfigured to work with SVP and HW decoding)
 * Plex Desktop
 
-## Images
+## Image
 
-##### Intel / AMD
 ```
 ghcr.io/lorduskordus/svp4-arch:latest
-```
-##### NVIDIA
-```
-ghcr.io/lorduskordus/svp4-arch-nvidia:latest
 ```
 
 ## Installation (distrobox)
 
-For the most painless way, just use the [install.sh](https://github.com/lorduskordus/svp4-arch/blob/main/install.sh) script. All it really does is choose the right image and automatically exports Plex and SVPManager.
+For the most painless way, just use the [install.sh](https://github.com/lorduskordus/svp4-arch/blob/main/install.sh) script.
 
 Alternatively:
 
@@ -34,11 +29,12 @@ distrobox-create --name svp4-arch --image ghcr.io/lorduskordus/svp4-arch:latest 
 
 #### NVIDIA
 ```
-distrobox-create --name svp4-arch --image ghcr.io/lorduskordus/svp4-arch-nvidia:latest --no-entry
+distrobox-create --name svp4-arch --image ghcr.io/lorduskordus/svp4-arch-nvidia:latest --nvidia --no-entry
 ```
 
 #### Export the apps to host
 ```
+distrobox-enter --name svp4-arch -- distrobox-export --app mpv
 distrobox-enter --name svp4-arch -- distrobox-export --app Plex
 distrobox-enter --name svp4-arch -- distrobox-export --app SVPManager
 ```
