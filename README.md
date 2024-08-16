@@ -2,6 +2,9 @@
 
 An Arch container that's ready for **Smooth Video Project** usage.
 
+> [!NOTE]
+> The image is meant to be used with [distrobox](https://github.com/89luca89/distrobox), ensure you have it [installed](https://github.com/89luca89/distrobox?tab=readme-ov-file#installation).
+
 Preinstalled:
 
 * SVP4
@@ -27,17 +30,17 @@ curl -s https://raw.githubusercontent.com/lorduskordus/svp4-arch/main/install.sh
 
 ##### Intel / AMD
 ```
-distrobox-create --name svp4-arch --image ghcr.io/lorduskordus/svp4-arch:latest --no-entry
+distrobox create --name svp4-arch --image ghcr.io/lorduskordus/svp4-arch:latest --no-entry
 ```
 
 ##### NVIDIA
 ```
-distrobox-create --name svp4-arch --image ghcr.io/lorduskordus/svp4-arch-nvidia:latest --nvidia --no-entry
+distrobox create --name svp4-arch --image ghcr.io/lorduskordus/svp4-arch-nvidia:latest --nvidia --no-entry
 ```
 
 ##### Export the apps to host
 ```
-distrobox-enter --name svp4-arch -- distrobox-export --app mpv
-distrobox-enter --name svp4-arch -- distrobox-export --app Plex
-distrobox-enter --name svp4-arch -- distrobox-export --app SVPManager
+distrobox enter --name svp4-arch -- distrobox-export --app mpv
+distrobox enter --name svp4-arch -- distrobox-export --app Plex
+distrobox enter --name svp4-arch -- distrobox-export --app SVPManager
 ```
