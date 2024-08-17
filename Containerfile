@@ -14,7 +14,7 @@ RUN pacman -S \
 
 # Install mpv & copy mpv config
 RUN pacman -S mpv --noconfirm
-COPY files /etc
+COPY config /etc
 
 # Install plex-desktop and SVP4
 USER build
