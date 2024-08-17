@@ -12,11 +12,9 @@ RUN pacman -S \
         mesa-vdpau \
         --noconfirm
 
-# Install mpv
+# Install mpv & copy mpv config
 RUN pacman -S mpv --noconfirm
-
-# Copy mpv config
-COPY files /
+COPY files /etc
 
 # Install plex-desktop and SVP4
 USER build
