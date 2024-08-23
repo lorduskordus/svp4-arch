@@ -35,7 +35,7 @@ distrobox create --name svp4-arch --image ghcr.io/lorduskordus/svp4-arch:latest 
 
 ##### NVIDIA
 ```
-distrobox create --name svp4-arch --image ghcr.io/lorduskordus/svp4-arch-nvidia:latest --nvidia --no-entry
+distrobox create --name svp4-arch --image ghcr.io/lorduskordus/svp4-arch:latest --nvidia --no-entry
 ```
 
 ##### Export the apps to host
