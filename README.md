@@ -14,7 +14,7 @@ Preinstalled:
 ## Image
 
 ```
-ghcr.io/lorduskordus/svp4-arch:latest
+ghcr.io/lorduskordus/svp4-arch
 ```
 
 ## Installation (distrobox)
