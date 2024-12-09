@@ -1,4 +1,4 @@
-# SVP4-Arch &nbsp; [![build-svp4-arch](https://github.com/lorduskordus/svp4-arch/actions/workflows/build.yml/badge.svg)](https://github.com/lorduskordus/svp4-arch/actions/workflows/build.yml)
+# SVP4 Arch &nbsp; [![build-svp4-arch](https://github.com/lorduskordus/svp4-arch/actions/workflows/build.yml/badge.svg)](https://github.com/lorduskordus/svp4-arch/actions/workflows/build.yml)
 
 An Arch container that's ready for **Smooth Video Project** usage.
 
